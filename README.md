@@ -1,1 +1,1 @@
-# ICT academy
+# ICT academy ning rasmiy veb sayti
