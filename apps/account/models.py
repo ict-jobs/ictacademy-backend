@@ -14,6 +14,9 @@ class Mentor(models.Model):
     role = models.CharField(max_length=100)
     image = models.FileField(upload_to='Image', null=True, blank=True)
     twitter = models.CharField(max_length=100, null=True, blank=True)
+    linkedin = models.CharField(max_length=100, null=True, blank=True)
+    website = models.CharField(max_length=100, null=True, blank=True)
+    telegram = models.CharField(max_length=100, null=True, blank=True)
     github = models.CharField(max_length=100, null=True, blank=True)
     user = models.OneToOneField(
         User,
