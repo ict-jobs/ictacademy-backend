@@ -49,10 +49,10 @@ INSTALLED_APPS = [
     'apps.blog',
     'apps.contact',
     'apps.course',
-    'apps.project',
+    # 'apps.project',
 ]
 
-# AUTH_USER_MODEL = 'account.Account'
+AUTH_USER_MODEL = 'account.User'
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
