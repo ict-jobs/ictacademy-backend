@@ -24,3 +24,10 @@ class Courses(models.Model):
     lessons_desc = models.CharField(max_length=150, null=True, blank=True)
     
 
+class KursgaYozilish(models.Model):
+    full_name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    profession = models.CharField(max_length=100)
+    date = models.DateField(auto_now_add=True)
+
