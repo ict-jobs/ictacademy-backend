@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 
-from apps import account
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,17 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # build-apps
-    'rest_framework',
-    'rest_framework_simplejwt',
-    'corsheaders',
-    'mptt',
+    ''
 
     # local apps
-    'apps.account',
     'apps.blog',
     'apps.contact',
     'apps.course',
-    'apps.project',
 ]
 
 # AUTH_USER_MODEL = 'account.Account'
