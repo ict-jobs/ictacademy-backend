@@ -1,8 +1,7 @@
 from django.db import models
 
 # Create your models here.
-<<<<<<< HEAD
-=======
+
 class CourseCategory(models.Model):
     category = models.CharField(max_length=50)
 
@@ -33,4 +32,3 @@ class Contact(models.Model):
     profession = models.CharField(max_length=100)
     date = models.DateField(auto_now_add=True)
 
->>>>>>> Jaloliddin_dev

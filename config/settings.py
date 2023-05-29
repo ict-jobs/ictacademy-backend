@@ -46,11 +46,7 @@ INSTALLED_APPS = [
     'apps.blog',
     'apps.contact',
     'apps.course',
-<<<<<<< HEAD
-    # 'apps.project',
-=======
     'apps.about',
->>>>>>> Jaloliddin_dev
 ]
 
 AUTH_USER_MODEL = 'account.User'
