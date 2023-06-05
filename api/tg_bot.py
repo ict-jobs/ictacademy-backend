@@ -21,7 +21,7 @@ async def main():
     await send_message_to_bot(chat_id, data)
     await bot.close()
 
-if __name__ == '__main__':
+def run_bot():
     # main()    
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())

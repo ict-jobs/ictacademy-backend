@@ -83,7 +83,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 import datetime
 import subprocess
-
+from api import tg_bot
 # CREATE VIEW  => POST
 class ContactCreateView(generics.CreateAPIView):
     queryset = Contact.objects.all()
@@ -113,8 +113,9 @@ class ContactCreateView(generics.CreateAPIView):
 
             
         try:
-            subprocess.run(['python', 'api/tg_bot.py'])
-        except subprocess.CalledProcessError as e:
+            tg_bot.run_bot()
+            # subprocess.run(['python', 'api/tg_bot.py'])
+        except Exception as e:
             print(f"============================ Error executing the script: {e}")
 
         print(" ========================== contact create view  another_function ================================")
