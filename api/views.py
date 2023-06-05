@@ -129,8 +129,8 @@ class ContactCreateView(generics.CreateAPIView):
 
             
         try:
-            # tg_bot.run_bot()
-            subprocess.run(['python', 'api/tg_bot.py'])
+            tg_bot.run_bot()
+            # subprocess.run(['python', 'api/tg_bot.py'])
         except Exception as e:
             print(f"============================ Error executing the script: {e}")
 
