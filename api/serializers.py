@@ -1,8 +1,7 @@
 from rest_framework import serializers
-from apps.about.models import Mentors,  Feedback, Projects
+from apps.about.models import Mentors,  Feedback, Projects, AboutUs
 from apps.blog.models import ArticleCategory, Article
-# from apps.contact.models import Contact
-from apps.course.models import CourseCategory, Courses, Contact
+from apps.course.models import CourseCategory, Courses, Contact, EnrollCourse
 
 
 
@@ -45,16 +44,22 @@ class CourseCategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-# class CourseByCategorySerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Courses
-#         fields = '__all__'
-
+class AboutUsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AboutUs
+        fields = '__all__'
 
 
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
+        fields = '__all__'
+
+
+
+class EnrollCourseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = EnrollCourse
         fields = '__all__'
 
 

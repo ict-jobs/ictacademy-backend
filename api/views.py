@@ -6,7 +6,6 @@ from .pagination import *
 import requests
 
 import datetime
-import subprocess
 
 from api import tg_bot
 # Create your views here.
@@ -87,6 +86,11 @@ class ArticleRetrieveView(generics.RetrieveAPIView):
     serializer_class = ArticleSerializer
     
 
+class AboutUsRetrieveView(generics.ListAPIView):
+    queryset = AboutUs.objects.all()
+    serializer_class = AboutUsSerializer
+    
+
 # class FilteredCourseList(generics.ListAPIView):
 #     queryset = Courses.objects.all()
 #     serializer_class = CourseByCategorySerializer
@@ -95,16 +99,17 @@ class ArticleRetrieveView(generics.RetrieveAPIView):
 #     ]
 #     filterset_fields = ['category']
  
-        
-# CREATE VIEW  => POST ## send message by telegram bot
-class ContactCreateView(generics.CreateAPIView):
+    
+    
+    
+# CREATE VIEW  => POST ## send message by telegram bot   ==== kursga yozilish uchun 
+class EnrollCourseCreateView(generics.CreateAPIView):
     queryset = Courses.objects.all()
-    serializer_class = ContactSerializer
+    serializer_class = EnrollCourseSerializer
     
     def perform_create(self, serializer):
         # Save the object
         instance = serializer.save()
-        #instance = "ok"
         data = self.request.data
         
         self.another_function( data)
@@ -112,7 +117,7 @@ class ContactCreateView(generics.CreateAPIView):
     def another_function(self, data):
         today = datetime.date.today()
         formatted_date = today.strftime("%Y-%m-%d")
-        course = self.queryset.get(id=int(data['profession']))
+        course = self.queryset.get(id=int(data['courseid']))
         
         text = f"""
 📝 Yangi ariza:\n
@@ -120,6 +125,42 @@ class ContactCreateView(generics.CreateAPIView):
 📲 Telefon: {data['phone']}
 🧑🏻‍💻 Kategoriya: {course.category}
 🧑🏻‍💻 Tanlagan kurs: {course.name}
+📅 Sana: {formatted_date}
+"""
+        with open('api/data.txt', 'w') as file:
+            file.write(str(text))
+
+            
+        try:
+            tg_bot.run_bot()
+            # subprocess.run(['python', 'api/tg_bot.py'])
+        except Exception as e:
+            print(f"============================ Error executing the script: {e}")
+
+        print(" ========================== contact create view  another_function ================================")
+  
+        
+class ContactCreateView(generics.CreateAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
+    
+    def perform_create(self, serializer):
+        # Save the object
+        instance = serializer.save()
+        # instance = "ok"
+        data = self.request.data
+        
+        self.another_function( data)
+
+    def another_function(self, data):
+        today = datetime.date.today()
+        formatted_date = today.strftime("%Y-%m-%d")
+        
+        text = f"""
+📝 Yangi Xabar:\n
+🙍🏻‍♂️ Foydalanuvchi: {data['name']}
+📲 Telefon: {data['phone']}
+📲 Xabar matni: {data['body']}
 📅 Sana: {formatted_date}
 """
         with open('api/data.txt', 'w') as file:

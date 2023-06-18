@@ -1,8 +1,7 @@
 
-📝 Yangi ariza:
+📝 Yangi Xabar:
 
 🙍🏻‍♂️ Foydalanuvchi: string
 📲 Telefon: string
-🧑🏻‍💻 Kategoriya: English for IT
-🧑🏻‍💻 Tanlagan kurs: Beginner to Intermediate
-📅 Sana: 2023-06-05
+📲 Xabar matni: string
+📅 Sana: 2023-06-16
