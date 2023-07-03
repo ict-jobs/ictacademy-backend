@@ -1,8 +1,8 @@
 
 📝 Yangi ariza:
 
-🙍🏻‍♂️ Foydalanuvchi: fdssafada
-📲 Telefon: 123118
-🧑🏻‍💻 Kategoriya: Foundation
-🧑🏻‍💻 Tanlagan kurs: C++
-📅 Sana: 2023-06-19
+🙍🏻‍♂️ Foydalanuvchi: dasdadas
+📲 Telefon: 12313
+🧑🏻‍💻 Kategoriya: FrontEnd
+🧑🏻‍💻 Tanlagan kurs: FrontEnd 004
+📅 Sana: 2023-06-29
