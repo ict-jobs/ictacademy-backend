@@ -32,7 +32,7 @@ class Feedback(models.Model):
 
 
 class Projects(models.Model):
-    product_name = models.CharField(max_length=150)
+    product_name = models.CharField(max_length=350)
     product_image = models.ImageField(upload_to='product/')
     product_image_2 = models.ImageField(upload_to='product/')
     product_url_web = models.CharField(max_length=250, null=True, blank=True)
@@ -48,7 +48,7 @@ class Projects(models.Model):
     end_date = models.DateField(null=True, blank=True)
 
     def __str__(self) -> str:
-        return self.product_name
+        return str(self.product_name)
     
     
 
