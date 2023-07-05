@@ -2,7 +2,7 @@ from aiogram import Bot, Dispatcher, types
 import asyncio
 import logging
 
-TOKEN = '6233717340:AAFU_2wbRrP-2frjSR2t6c_gD90y5rSvScY'
+TOKEN = '6159559187:AAEK3jv24Avzg3ugVL1iN7_srCgUZn1QD2Q'
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
@@ -10,11 +10,6 @@ dp = Dispatcher(bot)
 async def send_message_to_bot(chat_id, text):
     await bot.send_message(chat_id, text)
 
-@dp.message_handler(commands='star')
-async def add_to_db(message: types.Message):
-    await bot.send_message(message.chat.id, 'Сейчас добавлю')
-    await bot.send_message(message.chat.id, message.text)
- 
 
 async def main():
     # dp.run_until_disconnected()
