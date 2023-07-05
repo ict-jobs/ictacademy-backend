@@ -23,9 +23,9 @@ class Mentors(models.Model):
 
 
 class Feedback(models.Model):
-    full_name = models.CharField(max_length=50)
-    profession = models.CharField(max_length=50)
-    feedback = models.TextField()
+    full_name = models.CharField(max_length=50, null=True, blank=True)
+    profession = models.CharField(max_length=50, null=True, blank=True)
+    feedback = models.TextField( null=True, blank=True)
     image = models.ImageField( null=True, blank=True)
     company = models.CharField(max_length = 50, null=True, blank=True)
     company_logo = models.ImageField(upload_to='logo/', null=True, blank=True)
@@ -53,11 +53,18 @@ class Projects(models.Model):
     
 
 class AboutUs(models.Model):
+    main_title = models.CharField(max_length=300, null=True, blank=True)
+    main_subtitle = models.CharField(max_length=300, null=True, blank=True)
+    courses = models.IntegerField( null=True, blank=True)
+    course_directions = models.IntegerField( null=True, blank=True)
+    graduates = models.IntegerField( null=True, blank=True)
+    students = models.IntegerField( null=True, blank=True)
     title = models.CharField(max_length=50)
     body = models.TextField()
     director = models.CharField(max_length = 70, null=True, blank=True)
     director_pos = models.CharField(max_length = 70, null=True, blank=True)
     image = models.ImageField(upload_to='image/', null=True, blank=True)
+    
 
 
     def __str__(self) -> str:
