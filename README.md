@@ -5,4 +5,4 @@
 
 
 
-ICT Academy o'quv markazining rasmiy web saytining backend qismi kodlari
+ICT Academy o'quv markazining rasmiy web saytining backend qismi 
