@@ -2,11 +2,7 @@
 # import asyncio
 # import logging
 
-<<<<<<< HEAD
-TOKEN = '6159559187:AAEK3jv24Avzg3ugVL1iN7_srCgUZn1QD2Q'
-=======
 # TOKEN = '6159559187:AAEK3jv24Avzg3ugVL1iN7_srCgUZn1QD2Q'
->>>>>>> 26b01973da7bfcd86e943d4e7cc27931f6ee9456
 
 # bot = Bot(token=TOKEN)
 # dp = Dispatcher(bot)
