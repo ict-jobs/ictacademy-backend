@@ -3,7 +3,12 @@ from .models import Mentors,  Feedback, Projects, AboutUs
 # Register your models here.
 class FeedbackAdmin(admin.ModelAdmin):
     list_display = ('full_name', 'profession', 'company')
-admin.site.register(Mentors)
+    
+
+class MentorsAdmin(admin.ModelAdmin):
+    list_display = ('name', 'profession', 'queue')
+
+admin.site.register(Mentors, MentorsAdmin)
 admin.site.register(Projects)
 admin.site.register(AboutUs)
 admin.site.register(Feedback, FeedbackAdmin)

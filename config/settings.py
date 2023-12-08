@@ -83,7 +83,7 @@ REST_FRAMEWORK = {
 # cors headers ->
 CORS_ORIGIN_ALLOW_ALL = True
 
-ALLOWED_HOSTS = ['api.ictacademy.uz','ictacademy.uz' 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['api.ictacademy.uz','ictacademy.uz', 'localhost','161.97.67.145']
 CORS_ALLOW_METHODS = [
     '*'
 ]

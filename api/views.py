@@ -17,7 +17,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 # LIST VIEW  => GET
 class MentorsListView(generics.ListAPIView):
-    queryset = Mentors.objects.all()
+    queryset = Mentors.objects.all().order_by('queue')
     serializer_class = MentorSerializer
 
 class FeedbackListView(generics.ListAPIView):

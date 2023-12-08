@@ -14,6 +14,7 @@ class Mentors(models.Model):
     instagram = models.CharField(max_length=200, null=True, blank=True)
     
     image = models.ImageField(upload_to='mentors/',)
+    queue = models.IntegerField(null=True, blank=True, verbose_name="Navbati")
 
 
     def __str__(self) -> str:
