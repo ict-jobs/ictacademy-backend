@@ -7,7 +7,7 @@ import requests
 
 import datetime
 
-from api import tg_bot
+# from api import tg_bot
 # Create your views here.
 # from rest_framework.decorators import api_view
 from django_filters.rest_framework import DjangoFilterBackend
@@ -17,7 +17,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 # LIST VIEW  => GET
 class MentorsListView(generics.ListAPIView):
-    queryset = Mentors.objects.all()
+    queryset = Mentors.objects.all().order_by('queue')
     serializer_class = MentorSerializer
 
 class FeedbackListView(generics.ListAPIView):
@@ -131,11 +131,11 @@ class EnrollCourseCreateView(generics.CreateAPIView):
             file.write(str(text))
 
             
-        try:
-            tg_bot.run_bot()
-            # subprocess.run(['python', 'api/tg_bot.py'])
-        except Exception as e:
-            print(f"============================ Error executing the script: {e}")
+        # try:
+        #     tg_bot.run_bot()
+        #     # subprocess.run(['python', 'api/tg_bot.py'])
+        # except Exception as e:
+        #     print(f"============================ Error executing the script: {e}")
 
         print(" ========================== contact create view  another_function ================================")
   
@@ -167,10 +167,10 @@ class ContactCreateView(generics.CreateAPIView):
             file.write(str(text))
 
             
-        try:
-            tg_bot.run_bot()
-            # subprocess.run(['python', 'api/tg_bot.py'])
-        except Exception as e:
-            print(f"============================ Error executing the script: {e}")
+        # try:
+        #     tg_bot.run_bot()
+        #     # subprocess.run(['python', 'api/tg_bot.py'])
+        # except Exception as e:
+        #     print(f"============================ Error executing the script: {e}")
 
         print(" ========================== contact create view  another_function ================================")
